@@ -46,16 +46,13 @@
 
     <script>
         document.getElementById("house-form").addEventListener("submit", async function(event) {
-            // Ngăn chặn hành vi tải lại trang mặc định của form
             event.preventDefault();
-
-            // Lấy giá trị từ các trường nhập liệu
+            
             const area = document.getElementById("area").value;
             const bedrooms = document.getElementById("bedrooms").value;
             const location = document.getElementById("location").value;
             const resultDiv = document.getElementById("result");
 
-            // Hiển thị trạng thái đang tải
             resultDiv.innerText = "Đang tính toán...";
             resultDiv.className = "";
 
@@ -70,10 +67,8 @@
 
                 const data = await response.json();
 
-                // Lưu ý: Backend của bạn trả về key là "price" (không phải "predicted_price")
                 const finalPrice = data.price; 
                 
-                // Hiển thị kết quả, định dạng số có dấu phẩy/chấm phân cách
                 resultDiv.innerText = "Giá dự đoán: " + finalPrice.toLocaleString("vi-VN") + " VND";
                 
             } catch (error) {
