@@ -1,12 +1,3 @@
-Câu 3:
-
-- Try calling /predict without location — confirm it still works and explain why.
-  Không có location => location other => multiple = 1
-- Try calling /predict without area — confirm you get a 422 error and explain why.
-  Vì không có số liệu để tính toán
-
-cat << 'EOF' > README.md
-
 # House Price Prediction API
 
 Dự án này là một ứng dụng web kết nối giữa frontend (HTML/JS) và backend (FastAPI/Python) để dự đoán giá bất động sản dựa trên diện tích, số phòng ngủ và khu vực.
