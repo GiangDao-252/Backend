@@ -85,7 +85,6 @@ def delete_item(item_id:int):
 @app.post("/predict/house-price", response_model=HousePricePrediction)
 def predict_house_price(data: HousePriceRequest):
     price = (data.area_sqm * 15_000_000) - (data.distance_to_center_km * 5_000_000) + (data.bedrooms * 20_000_000)
-    
     final_price = price if price > 0 else 0
     return HousePricePrediction(predicted_price=final_price)
 
